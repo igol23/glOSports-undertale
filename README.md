@@ -15,12 +15,27 @@ A community Undertale port setup for GA36 / R36S clone handhelds.
 - goodluckOS
 
 ## Installation
-1. Obtain the Butterscotch ARMHF runner from:
-   https://github.com/ButterscotchRunner/Butterscotch
-2. Place the runner as `ports/undertale/butterscotch`.
-3. Place your own `data.win` and required game assets in `ports/undertale/`.
-4. Copy the port folder to the SD card.
-5. Launch Undertale from goodluckOS.
+
+### Requirements
+
+- GA36-MB v1.1 or a compatible A33-based handheld
+- goodluckOS 0.1.0
+- A compatible ARMHF Linux build of [Butterscotch](https://github.com/cobaltgit/Butterscotch/tree/miyoomini-v2)
+- Your own legally obtained Undertale v1.08 Windows game files
+
+### Setup
+
+1. Download a compatible ARMHF Butterscotch executable.
+2. Place it at `ports/undertale/butterscotch`.
+3. Copy your own `data.win` and required game assets, including the `.ogg` audio files, into `ports/undertale/`.
+4. Extract this repository's files into the root of the goodluckOS HOME partition on your SD card, merging existing folders.
+5. Ensure your game files are in `HOME/ports/undertale/`.
+6. Safely eject the SD card, insert it into the handheld, and launch **Undertale** from the Games category in Puppy.
+
+### Saves and Logs
+
+- Save files are stored in `ports/undertale/saves/`; the launcher creates this directory automatically.
+- The launcher writes its debug log to `/home/player/undertale-launcher-debug.log`.
 
 ## Screenshots
 
