@@ -1,0 +1,41 @@
+# UNDERTALE - GOODLUCKOS / GA36-MB
+
+Bu paket, goodluckOS'un HOME bölümüne kurulmak üzere hazırlanmıştır.
+
+## GEREKSİNİMLER
+
+- GA36-MB v1.2 (Allwinner A23, Mali-400, 512 MB RAM)
+- goodluckOS 0.1.0
+- Uyumlu ARMHF Linux SDL2 Butterscotch çalıştırıcısı
+- Kullanıcının yasal olarak sahip olduğu Undertale v1.08 Windows oyun dosyaları
+
+## KURULUM
+
+1. SD kartı bilgisayara tak.
+2. SD kartın HOME bölümünün kök dizinine bu depodaki `.local` ve `ports` klasörlerini kopyala. Klasörleri birleştirme sorusu gelirse birleştirmeye izin ver.
+3. Uyumlu ARMHF Butterscotch çalıştırıcısını `HOME/ports/undertale/butterscotch` konumuna yerleştir.
+4. Kendi `data.win` dosyanı ve gerekli oyun dosyalarını (OGG ses dosyaları dahil) `HOME/ports/undertale/` klasörüne kopyala.
+5. Kartı güvenli şekilde çıkarıp GA36'ya tak.
+6. Puppy menüsünü aç ve Games kategorisinden Undertale'i başlat.
+
+## DOSYA DÜZENİ
+
+- `.local/share/applications/undertale.puppy` — Puppy uygulama kaydı
+- `ports/undertale/butterscotch` — ARMHF çalıştırıcı
+- `ports/undertale/data.win` — Kullanıcının kendi oyun dosyası
+- `ports/undertale/*.ogg` — Gerekli oyun ses dosyaları
+- `ports/undertale/start-undertale.sh` — Oyunu başlatan script
+- `ports/undertale/saves/` — Kayıt dosyaları
+
+## HATA KAYDI
+
+Oyun başlamazsa aşağıdaki log dosyasını bilgisayarda açıp hata kaydıyla birlikte paylaş:
+
+`/home/player/undertale-launcher-debug.log`
+
+## NOTLAR
+
+- Oyun dosyaları bu depoda dağıtılmaz; kullanıcı kendi oyun kopyasını sağlamalıdır.
+- Çalıştırıcı, Cobalt'ın [Butterscotch Miyoo Mini v2 fork'u](https://github.com/cobaltgit/Butterscotch/tree/miyoomini-v2) temel alınarak hazırlanmıştır.
+- goodluckOS'un Half-Life portuyla aynı Puppy kayıt ve HOME klasör düzeni kullanılır.
+- Butterscotch geliştirme aşamasındadır. WAD 16 uyumluluğu, her oyunun hatasız çalışacağını garanti etmez.
