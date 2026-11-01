@@ -24,18 +24,19 @@ A community Undertale port setup for GA36 / R36S clone handhelds.
 
 ## Screenshots
 
-Undertale running on GA36-MB with goodluckOS 0.1.0.
+Undertale running on the GA36-MB (R36S clone) with goodluckOS 0.1.0.
 
-<p align="center">
-  <img src="screenshots/undertale-ga36-1.jpg.jpeg" width="32%" alt="Undertale intro">
-  <img src="screenshots/undertale-ga36-2.jpg.jpeg" width="32%" alt="Undertale main menu">
-  <img src="screenshots/undertale-ga36-3.jpg.jpeg" width="32%" alt="Undertale gameplay">
-</p>
-<p align="center">
-  <img src="screenshots/undertale-ga36-4.jpg.jpeg" width="32%" alt="Undertale name entry">
-  <img src="screenshots/undertale-ga36-5.jpg.jpeg" width="32%" alt="Undertale dialogue">
-  <img src="screenshots/undertale-ga36-6.jpg.jpeg" width="32%" alt="Undertale battle with Flowey">
-</p>
+| Intro | Main Menu |
+| ----- | --------- |
+| ![Undertale intro](screenshots/undertale-ga36-1.jpg.jpeg) | ![Undertale main menu](screenshots/undertale-ga36-2.jpg.jpeg) |
+
+| Gameplay | Name Entry |
+| -------- | ---------- |
+| ![Undertale gameplay](screenshots/undertale-ga36-3.jpg.jpeg) | ![Undertale name entry](screenshots/undertale-ga36-4.jpg.jpeg) |
+
+| Dialogue | Flowey Battle |
+| -------- | ------------- |
+| ![Undertale dialogue](screenshots/undertale-ga36-5.jpg.jpeg) | ![Undertale battle with Flowey](screenshots/undertale-ga36-6.jpg.jpeg) |
 
 ## Debug overlay
 The launcher omits the `--debug` argument to prevent the FPS/RAM debug overlay from appearing.
