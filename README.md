@@ -55,7 +55,9 @@ Undertale running on the GA36-MB (R36S clone) with goodluckOS 0.1.0.
 The launcher omits the `--debug` argument to prevent the FPS/RAM debug overlay from appearing.
 
 ## Credits
-- ButterscotchRunner: https://github.com/ButterscotchRunner/Butterscotch
+- Butterscotch: [Cobalt's Miyoo Mini v2 fork](https://github.com/cobaltgit/Butterscotch/tree/miyoomini-v2)
 - Undertale: Toby Fox
 
 This project does not distribute Undertale game assets.
+
+[ Türkçe kurulum rehberi (INSTALL-TR.txt) ](INSTALL-TR.txt)
