@@ -14,15 +14,12 @@ A community Undertale port setup for GA36 / R36S clone handhelds.
 - A compatible ARMHF SDL2 Butterscotch runner
 - Your own legally obtained Undertale game files
 - goodluckOS
-
-## Installation
-
-### Requirements
-
-- GA36-MB v1.1 or a compatible A33-based handheld
+- GA36-MB v1.2 (Allwinner A23, Mali-400, 512 MB RAM)
 - goodluckOS 0.1.0
 - A compatible ARMHF Linux build of [Butterscotch](https://github.com/cobaltgit/Butterscotch/tree/miyoomini-v2)
-- Your own legally obtained Undertale v1.08 Windows game files
+- Your own legally obtained Undertale v1.08 Windows game files 
+
+## Installation
 
 ### Setup
 
