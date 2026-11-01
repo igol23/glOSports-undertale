@@ -12,7 +12,9 @@ SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 ZIP_OUT="${UNDERTALE_PACKAGE_OUT:-$SCRIPT_DIR/Undertale-goodluckOS.zip}"
 
 WORK="$(mktemp -d -t undertale-glos.XXXXXX)"
-cleanup() { rm -rf -- "$WORK"; }
+cleanup() {
+    rm -rf -- "$WORK"
+}
 trap cleanup EXIT
 
 fail() {
@@ -23,15 +25,18 @@ fail() {
 printf 'Undertale / goodluckOS package preparation\n'
 printf 'Steam game directory: %s\n' "$STEAM_GAME_DIR"
 
+# Check the user's game data.
 [[ -f "$STEAM_GAME_DIR/data.win" ]] ||
     fail "data.win not found: $STEAM_GAME_DIR/data.win"
 
-for tool in python3 unzip sha256sum file; do
+# Check required tools.
+for tool in python3 unzip sha256sum file stat du; do
     command -v "$tool" >/dev/null 2>&1 ||
         fail "$tool is required."
 done
 
-if ! command -v curl >/dev/null 2>&1 && ! command -v wget >/dev/null 2>&1; then
+if ! command -v curl >/dev/null 2>&1 &&
+   ! command -v wget >/dev/null 2>&1; then
     fail "curl or wget is required."
 fi
 
@@ -51,6 +56,7 @@ else
     wget -O "$ARCHIVE" "$ASSET_URL"
 fi
 
+printf '\nVerifying archive SHA256...\n'
 printf '%s  %s\n' "$ASSET_SHA256" "$ARCHIVE" | sha256sum -c -
 
 printf '\n[2/5] Extracting and checking ARM runner...\n'
@@ -74,10 +80,11 @@ printf '%s\n' "$FILE_INFO"
     fail "The runner is not a 32-bit ARM ELF executable."
 
 DATA_SIZE="$(stat -c '%s' "$STEAM_GAME_DIR/data.win")"
+
 ((DATA_SIZE > 1000000)) ||
     fail "data.win looks unexpectedly small ($DATA_SIZE bytes)."
 
-# Preserve the runtime files shipped alongside the executable.
+# Preserve all runtime files shipped alongside the executable.
 cp -a "$RUNNER_DIR/." "$WORK/package/ports/undertale/"
 
 cp -f \
@@ -131,14 +138,21 @@ echo "===== KAYIT KONUMU ====="
 echo "$PORT_DIR/saves"
 
 echo "===== BUTTERSCOTCH BAŞLIYOR ====="
-"$PORT_DIR/butterscotch" \
+
+# Use an if statement so a non-zero game exit code is logged
+# instead of terminating the launcher before RESULT is assigned.
+if "$PORT_DIR/butterscotch" \
     --lazy-rooms \
     --lazy-textures \
     --disable-log-colours \
     --save-folder "$PORT_DIR/saves" \
     "$PORT_DIR/data.win"
+then
+    RESULT=0
+else
+    RESULT=$?
+fi
 
-RESULT=$?
 echo "===== EXIT CODE: $RESULT ====="
 exit "$RESULT"
 LAUNCHER
@@ -183,7 +197,6 @@ printf '\n[4/5] Validating package...\n'
 printf '\n[5/5] Creating installation ZIP...\n'
 
 python3 - "$WORK/package" "$ZIP_OUT" <<'PY'
-import os
 import stat
 import sys
 import zipfile
@@ -191,6 +204,7 @@ from pathlib import Path
 
 root = Path(sys.argv[1])
 output = Path(sys.argv[2])
+
 output.parent.mkdir(parents=True, exist_ok=True)
 
 if output.exists():
@@ -209,17 +223,23 @@ with zipfile.ZipFile(
         relative = path.relative_to(root).as_posix()
         info = zipfile.ZipInfo.from_file(path, relative)
 
-        # Preserve Unix permissions in the ZIP.
+        # Preserve Unix file permissions, including executable bits.
         info.create_system = 3
-        info.external_attr = (stat.S_IFREG | stat.S_IMODE(path.stat().st_mode)) << 16
+        mode = stat.S_IFREG | stat.S_IMODE(path.stat().st_mode)
+        info.external_attr = mode << 16
 
         with path.open("rb") as source:
-            archive.writestr(info, source.read(), compress_type=zipfile.ZIP_DEFLATED)
+            archive.writestr(
+                info,
+                source.read(),
+                compress_type=zipfile.ZIP_DEFLATED
+            )
 PY
 
 printf '\nDONE\n'
 printf 'Package: %s\n' "$ZIP_OUT"
-du -h "$ZIP_OUT"
+printf 'Size: '
+du -h "$ZIP_OUT" | awk '{print $1}'
 
 printf '\nArchive contents:\n'
 unzip -l "$ZIP_OUT"
