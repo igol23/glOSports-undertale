@@ -1,4 +1,4 @@
-```bash
+bash
 #!/usr/bin/env bash
 # Prepare an Undertale installation ZIP for goodluckOS.
 # Uses Cobalt's precompiled Butterscotch ARMHF runtime and the user's own data.win.
@@ -226,4 +226,3 @@ printf '\nArchive contents:\n'
 unzip -l "$ZIP_OUT"
 
 printf '\nExtract this ZIP into the root of the goodluckOS HOME partition.\n'
-```
