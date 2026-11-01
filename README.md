@@ -3,8 +3,8 @@
 A community Undertale port setup for GA36 / R36S clone handhelds.
 
 ## Device
-- GA36-MB v1.1
-- Allwinner A33
+- GA36-MB v1.2
+- Allwinner A23
 - Mali-400
 - 512 MB RAM
 - goodluckOS 0.1.0
