@@ -1,4 +1,3 @@
-```sh
 #!/bin/sh
 
 PORT_DIR="/home/player/ports/undertale"
@@ -43,4 +42,3 @@ echo "===== BUTTERSCOTCH BAŞLIYOR ====="
 RESULT=$?
 echo "===== EXIT CODE: $RESULT ====="
 exit "$RESULT"
-```
