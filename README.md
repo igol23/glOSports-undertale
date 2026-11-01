@@ -59,3 +59,7 @@ The launcher omits the `--debug` argument to prevent the FPS/RAM debug overlay f
 This project does not distribute Undertale game assets.
 
 [ Türkçe kurulum rehberi (INSTALL-TR.txt) ](INSTALL-TR.txt)
+
+   ## License
+   The scripts and launcher in this repository are released under the MIT License.
+   Undertale and its game files are not included and remain the property of their owners.
