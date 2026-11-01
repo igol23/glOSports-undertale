@@ -3,11 +3,12 @@
 A community Undertale port setup for GA36 / R36S clone handhelds.
 
 ## Device
-- GA36-MB v1.2
-- Allwinner A23
-- Mali-400
-- 512 MB RAM
-- goodluckOS 0.1.0
+
+- **Device:** GA36-MB v1.2 (R36S clone)
+- **SoC:** Allwinner A23
+- **GPU:** Mali-400
+- **RAM:** 512 MB
+- **OS:** goodluckOS 0.1.0
 
 ## Requirements
 - A compatible ARMHF SDL2 Butterscotch runner
