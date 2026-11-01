@@ -1,3 +1,4 @@
+```sh
 #!/bin/sh
 
 PORT_DIR="/home/player/ports/undertale"
@@ -11,7 +12,7 @@ echo "HOME=$HOME"
 uname -a
 
 echo "===== DOSYA KONTROLÜ ====="
-for p in "$PORT_DIR" "$PORT_DIR/butterscotch" "$PORT_DIR/data.win" "$PORT_DIR/lib/libSDL-1.2.so.0"; do
+for p in "$PORT_DIR" "$PORT_DIR/butterscotch" "$PORT_DIR/data.win"; do
     [ -e "$p" ] && ls -ld "$p" || echo "EKSIK: $p"
 done
 
@@ -19,10 +20,11 @@ done
 cd "$PORT_DIR" || exit 90
 
 [ -f "$PORT_DIR/data.win" ] || exit 92
+[ -f "$PORT_DIR/butterscotch" ] || exit 91
 
 chmod +x "$PORT_DIR/butterscotch"
 
-# Save klasörünü önceden oluştur; kayıtlar SD kartta kalır.
+# Save klasörünü oluştur; kayıtlar SD kartta kalır.
 mkdir -p "$PORT_DIR/saves"
 
 export SDL_VIDEODRIVER=kmsdrm
@@ -41,3 +43,4 @@ echo "===== BUTTERSCOTCH BAŞLIYOR ====="
 RESULT=$?
 echo "===== EXIT CODE: $RESULT ====="
 exit "$RESULT"
+```
