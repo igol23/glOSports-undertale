@@ -1,4 +1,3 @@
-bash
 #!/usr/bin/env bash
 # Prepare an Undertale installation ZIP for goodluckOS.
 # Uses Cobalt's precompiled Butterscotch ARMHF runtime and the user's own data.win.
