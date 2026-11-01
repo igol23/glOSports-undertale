@@ -1,0 +1,5 @@
+[Entry]
+CATEGORY=Games
+NAME=Undertale
+DESCRIPTION=Fan-Made Undertale Port for goodluckOS
+COMMAND=sh /home/player/ports/undertale/start-undertale.sh
