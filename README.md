@@ -22,6 +22,21 @@ A community Undertale port setup for GA36 / R36S clone handhelds.
 4. Copy the port folder to the SD card.
 5. Launch Undertale from goodluckOS.
 
+## Screenshots
+
+Undertale running on GA36-MB with goodluckOS 0.1.0.
+
+<p align="center">
+  <img src="screenshots/undertale-ga36-1.jpg" width="32%" alt="Undertale intro">
+  <img src="screenshots/undertale-ga36-2.jpg" width="32%" alt="Undertale main menu">
+  <img src="screenshots/undertale-ga36-3.jpg" width="32%" alt="Undertale gameplay">
+</p>
+<p align="center">
+  <img src="screenshots/undertale-ga36-4.jpg" width="32%" alt="Undertale name entry">
+  <img src="screenshots/undertale-ga36-5.jpg" width="32%" alt="Undertale dialogue">
+  <img src="screenshots/undertale-ga36-6.jpg" width="32%" alt="Flowey battle">
+</p>
+
 ## Debug overlay
 The launcher omits the `--debug` argument to prevent the FPS/RAM debug overlay from appearing.
 
