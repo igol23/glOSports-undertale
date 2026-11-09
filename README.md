@@ -1,4 +1,31 @@
-# Undertale on GA36 - goodluckOS
+# 🎮 Undertale on GA36 — goodluckOS
+
+<p align="center">
+  <a href="https://github.com/igol23/glOSports-undertale/releases/latest">
+    <img src="https://img.shields.io/github/v/release/igol23/glOSports-undertale?style=for-the-badge&label=LATEST%20RELEASE&color=brightgreen" alt="Latest Release">
+  </a>
+  <a href="https://github.com/igol23/glOSports-undertale/releases">
+    <img src="https://img.shields.io/github/downloads/igol23/glOSports-undertale/total?style=for-the-badge&label=DOWNLOADS&color=blue" alt="Downloads">
+  </a>
+</p>
+
+<p align="center">
+  <strong>Undertale running on GA36 / R36S clone handhelds with goodluckOS.</strong>
+</p>
+
+<p align="center">
+  <a href="https://github.com/igol23/glOSports-undertale/releases/latest">
+    <img src="https://img.shields.io/badge/⬇_DOWNLOAD-LATEST_RELEASE-success?style=for-the-badge" alt="Download Latest Release">
+  </a>
+  &nbsp;
+  <a href="INSTALL-TR.txt">
+    <img src="https://img.shields.io/badge/🇹🇷_TÜRKÇE-KURULUM_REHBERİ-red?style=for-the-badge" alt="Türkçe Kurulum">
+  </a>
+</p>
+
+---
+
+
 
 A community Undertale port setup for GA36 / R36S clone handhelds.
 
