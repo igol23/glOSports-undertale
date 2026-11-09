@@ -2,6 +2,21 @@
 
 A community Undertale port setup for GA36 / R36S clone handhelds.
 
+## Tested
+
+**Playthrough verification**
+
+- [x] Game launches successfully on goodluckOS
+- [x] Main menu and gameplay tested
+- [x] True Pacifist Route completed
+- [x] Full playthrough completed
+- [ ] Additional hardware compatibility testing
+
+**Verified by:** igol23
+**Game:** Undertale
+**Route:** True Pacifist
+**Status:** Completed successfully
+
 ## Device
 
 - **Device:** GA36-MB v1.2 (R36S clone)
