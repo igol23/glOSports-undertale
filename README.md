@@ -29,6 +29,8 @@
 
 A community Undertale port setup for GA36 / R36S clone handhelds.
 
+> ⚠️ **Important:** The latest version is always available on the [Releases page](https://github.com/igol23/glOSports-undertale/releases/latest). Please download the latest release instead of using older repository files.
+
 ## Tested
 
 **Playthrough verification**
